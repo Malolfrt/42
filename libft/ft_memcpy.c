@@ -1,44 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:00:52 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/08 13:19:12 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/08 13:20:10 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/08 15:27:54 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char	*str;
+	size_t				i;
+	unsigned char		*strdest;
+	unsigned const char	*strsrc;
 
 	i = 0;
-	str = s;
+	strdest = dest;
+	strsrc = src;
 	while (i <= n)
 	{
-		str[i] = (unsigned char)c;
+		strdest[i] = strsrc[i];
 		i++;
 	}
-	s = str;
-	return (s);
+	dest = strdest;
+	return (dest);
 }
 
 /*int	main(void)
 {
-	void	*test;
-	void	*true;
-	char	*restest;
-	char	*restrue;
-	char	*tab[5];
+	char	*src = "texte a copier";
+	char	dest[50];
+	char	*res;
 
-	test = ft_memset(tab, '1', 5);
-	true = memset(tab, '1', 5);
-	restest = test;
-	restrue = true;
-	printf("%s : %s", restest, restrue);
+	printf ("before : %s\n", dest);
+	res = ft_memcpy(dest, src, 14);
+	printf ("after : %s\n", res);
+	return (0);
 }*/

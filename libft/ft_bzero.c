@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:00:52 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/08 13:19:12 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/08 12:32:31 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/08 13:18:04 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-	char	*str;
+	size_t			i;
+	unsigned char	*str;
 
 	i = 0;
 	str = s;
 	while (i <= n)
 	{
-		str[i] = (unsigned char)c;
+		str[i] = 0;
 		i++;
 	}
-	s = str;
-	return (s);
 }
 
 /*int	main(void)
 {
-	void	*test;
-	void	*true;
-	char	*restest;
-	char	*restrue;
-	char	*tab[5];
+	char	tab[17] = "ceci est un test";
+	char	tabtrue[17] = "ceci est un trues";
 
-	test = ft_memset(tab, '1', 5);
-	true = memset(tab, '1', 5);
-	restest = test;
-	restrue = true;
-	printf("%s : %s", restest, restrue);
+	printf ("%s : beforetest\n", tab);
+	printf ("%s : beforetrue\n", tabtrue);
+
+	bzero((tabtrue + 8), 5);
+	ft_bzero((tab + 8), 5);
+	printf ("%s : aftertrue\n", tabtrue);
+	printf ("%s : aftertest\n", tab);
+	return (0);
 }*/
