@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 13:20:10 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/08 15:27:54 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/09 16:19:09 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/09 17:11:00 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,29 +15,35 @@
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	size_t				i;
-	unsigned char		*strdest;
-	unsigned const char	*strsrc;
+	unsigned char		*d;
+	unsigned const char	*s;
 
 	i = 0;
-	strdest = dest;
-	strsrc = src;
+	d = (unsigned char *)dest;
+	s = (unsigned const char *)src;
 	while (i <= n)
 	{
-		strdest[i] = strsrc[i];
+		d[i] = s[i];
 		i++;
 	}
-	dest = strdest;
+	dest = d;
 	return (dest);
 }
 
-/*int	main(void)
+/*int main(void)
 {
-	char	*src = "texte a copier";
-	char	dest[50];
-	char	*res;
+char *src = "texte a copier";
+char dest[50];
+char *true = "texte a copier";
+char destrue[50];
+char *res;
+char *restrue;
 
-	printf ("before : %s\n", dest);
-	res = ft_memcpy(dest, src, 14);
-	printf ("after : %s\n", res);
-	return (0);
+printf ("before la mienne: %s\n", dest);
+printf ("before la vrai: %s\n", destrue);
+restrue = memcpy(destrue, true, 14);
+res = ft_memcpy(dest, src, 14);
+printf ("after la mienne : %s\n", res);
+printf ("after la vrai : %s\n", restrue);
+return (0);
 }*/
