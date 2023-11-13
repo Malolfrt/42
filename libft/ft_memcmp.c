@@ -1,42 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:32:31 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 15:51:50 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/13 20:02:05 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/13 20:19:52 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*str;
+	size_t				i;
+	const unsigned char	*cst1;
+	const unsigned char	*cst2;
 
+	cst1 = s1;
+	cst2 = s2;
 	i = 0;
-	str = s;
-	while (i <= n)
+	if (n == 0)
+		return (0);
+	while (i < n)
 	{
-		str[i] = 0;
+		if (cst1[i] != cst2[i])
+			return (cst1[i] - cst2[i]);
 		i++;
 	}
+	return (0);
 }
 
 /*int	main(void)
 {
-	char	tab[17] = "ceci est un test";
-	char	tabtrue[17] = "ceci est un trues";
+	const char	*str1 = "ACD";
+	const char	*str2 = "ABC";
+	int			result;
 
-	printf ("%s : beforetest\n", tab);
-	printf ("%s : beforetrue\n", tabtrue);
-
-	bzero((tabtrue + 8), 5);
-	ft_bzero((tab + 8), 5);
-	printf ("%s : aftertrue\n", tabtrue);
-	printf ("%s : aftertest\n", tab);
+	result = ft_memcmp(str1, str2, 5);
+	printf ("%d\n", result);
 	return (0);
 }*/

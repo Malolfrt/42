@@ -1,42 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:32:31 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 15:51:50 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/13 19:36:15 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/13 20:01:24 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t			i;
-	unsigned char	*str;
+	const unsigned char	*p;
+	unsigned char		z;
+	size_t				i;
 
+	p = s;
+	z = c;
 	i = 0;
-	str = s;
-	while (i <= n)
+	while (i < n)
 	{
-		str[i] = 0;
+		if (p[i] == c)
+			return ((void *)p + i);
 		i++;
 	}
+	return (0);
 }
 
 /*int	main(void)
 {
-	char	tab[17] = "ceci est un test";
-	char	tabtrue[17] = "ceci est un trues";
+	const char	*str = "Hello, World!";
+	int			search_char = 'W';
+	const char	*result = ft_memchr(str, search_char, 10);
 
-	printf ("%s : beforetest\n", tab);
-	printf ("%s : beforetrue\n", tabtrue);
-
-	bzero((tabtrue + 8), 5);
-	ft_bzero((tab + 8), 5);
-	printf ("%s : aftertrue\n", tabtrue);
-	printf ("%s : aftertest\n", tab);
-	return (0);
+	if (result != NULL)
+	{
+		printf("Caractère trouvé à la position : %ld\n", result - str);
+	}
+	else
+	{
+		printf("Caractère non trouvé.\n");
+	}
+	return 0;
 }*/

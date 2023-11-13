@@ -1,46 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/09 16:55:47 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 16:51:43 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/13 20:21:03 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/13 20:58:01 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
-	size_t	len;
+	size_t	j;
 
 	i = 0;
-	len = 0;
-	while (src[len])
+	if (len == 0)
+		return (0);
+	if (little == (void *) '\0')
+		return ((char *)big);
+	while (i < len && big[i])
 	{
-		len++;
-		if (size < 1)
-			return (len);
-		while (src[i] && i < size - 1)
+		j = 0;
+		while (little[j] == big[j + i])
 		{
-			dst[i] = src[i];
-			i++;
+			if (little[j + 1] == '\0')
+				return ((char *)big + i);
+		j++;
 		}
+		i++;
 	}
-	dst[i + 1] = '\0';
-	return (len + 1);
+	return ((char *)big);
 }
 
 /*int	main(void)
 {
-	char	dst[50];
-	char	*src = "12345679";
-	int		res;
+	const char	*str1 = "hello world, worldwideweb on va voir";
+	const char	*str2 = "wide";
+	const char	*res;
 
-	res = ft_strlcpy(dst, src, 5);
-	printf ("%d\n", res);
+	res = ft_strnstr(str1, str2, 19);
+	printf ("%s\n", res);
 	return (0);
 }*/

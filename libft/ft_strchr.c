@@ -1,42 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:32:31 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 15:51:50 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/13 17:42:26 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/13 18:14:03 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t			i;
-	unsigned char	*str;
+	int		i;
 
 	i = 0;
-	str = s;
-	while (i <= n)
+	while (s[i])
 	{
-		str[i] = 0;
+		if (s[i] == c)
+		{
+			return ((char *)s);
+		}
 		i++;
 	}
+	return (NULL);
 }
+
+/*int main()
+{
+	char str[] = "http://www.tutorialspoint.com";
+	char ch = 'w';
+	char *ret;
+
+	ret = ft_strchr(str, ch);
+	printf("String after |%c| is - |%s|\n", ch, ret);
+	return (0);
+}*/
 
 /*int	main(void)
 {
-	char	tab[17] = "ceci est un test";
-	char	tabtrue[17] = "ceci est un trues";
+	char	*s = "test de la fonction";
+	char	res;
 
-	printf ("%s : beforetest\n", tab);
-	printf ("%s : beforetrue\n", tabtrue);
-
-	bzero((tabtrue + 8), 5);
-	ft_bzero((tab + 8), 5);
-	printf ("%s : aftertrue\n", tabtrue);
-	printf ("%s : aftertest\n", tab);
+	res = ft_strchr(s, 'l');
+	printf ("str after %c is - %c\n", s, res);
 	return (0);
 }*/

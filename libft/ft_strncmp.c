@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:32:31 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 15:51:50 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/13 19:08:45 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/13 19:25:31 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t			i;
-	unsigned char	*str;
+	size_t	i;
 
 	i = 0;
-	str = s;
-	while (i <= n)
+	if (n == 0)
+		return (0);
+	while (i < n)
 	{
-		str[i] = 0;
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
 		i++;
 	}
+	return (0);
 }
 
 /*int	main(void)
 {
-	char	tab[17] = "ceci est un test";
-	char	tabtrue[17] = "ceci est un trues";
+	const char	*str1 = "abcdzfg";
+	const char	*str2 = "abcdafg";
+	int			res;
 
-	printf ("%s : beforetest\n", tab);
-	printf ("%s : beforetrue\n", tabtrue);
-
-	bzero((tabtrue + 8), 5);
-	ft_bzero((tab + 8), 5);
-	printf ("%s : aftertrue\n", tabtrue);
-	printf ("%s : aftertest\n", tab);
+	res = ft_strncmp(str1, str2, 4);
+	printf ("%d\n", res);
 	return (0);
 }*/

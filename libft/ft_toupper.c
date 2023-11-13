@@ -1,42 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:32:31 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 15:51:50 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/13 17:12:04 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/13 17:27:27 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_toupper(int c)
 {
-	size_t			i;
-	unsigned char	*str;
-
-	i = 0;
-	str = s;
-	while (i <= n)
+	if (c >= 97 && c <= 122)
 	{
-		str[i] = 0;
-		i++;
+		c = c - 32;
 	}
+	return (c);
 }
 
 /*int	main(void)
 {
-	char	tab[17] = "ceci est un test";
-	char	tabtrue[17] = "ceci est un trues";
-
-	printf ("%s : beforetest\n", tab);
-	printf ("%s : beforetrue\n", tabtrue);
-
-	bzero((tabtrue + 8), 5);
-	ft_bzero((tab + 8), 5);
-	printf ("%s : aftertrue\n", tabtrue);
-	printf ("%s : aftertest\n", tab);
+	char	c;
+	c = ft_toupper('a');
+	printf("%c", c);
 	return (0);
 }*/

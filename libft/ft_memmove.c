@@ -6,17 +6,17 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:05:55 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/09 17:10:09 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/13 17:40:55 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*#include "libft.h"
+#include "libft.h"
 
-void *ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	unsigned char *d;
-	unsigned char *s;
-	size_t i;
+	unsigned char	*d;
+	unsigned char	*s;
+	size_t			i;
 
 	d = (unsigned char *)dst;
 	s = (unsigned char *)src;
@@ -34,7 +34,7 @@ void *ft_memmove(void *dst, const void *src, size_t len)
 	return (dst);
 }
 
-int main(void)
+/*int main(void)
 {
 	char str1[50];
 	char str2[50] = "mahmudul hasan";
@@ -43,35 +43,9 @@ int main(void)
 	ret = ft_memmove(str1, str2, 11);
 	printf("%s", ret);
 	return (0);
-}
-/*#include "libft.h"
+}*/
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
-{
-	unsigned char *d;
-	unsigned char *s;
-
-	d = (unsigned char *)dest;
-	s = (unsigned char *)src;
-	if (d < s)
-	{
-		ft_memcpy(dest, src, n);
-	}
-	return (dest);
-}
-
-int main(void)
-{
-	char str1[50];
-	char str2[50] = "mahmudul hasan";
-	char *ret;
-
-	ret = ft_memmove(str1, str2, 11);
-	printf("%s", ret);
-	return (0);
-}
-
-int	main(void)
+/*int	main(void)
 {
 	char	dest[50];
 	char	*src = "success";

@@ -1,42 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/08 12:32:31 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 15:51:50 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/13 18:14:29 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/13 19:07:29 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t			i;
-	unsigned char	*str;
+	int	i;
 
 	i = 0;
-	str = s;
-	while (i <= n)
-	{
-		str[i] = 0;
+	while (s[i])
 		i++;
-	}
+	while (s[i] != c)
+	{
+		if (c == '\0')
+			return (NULL);
+	i--;
+	}	
+	return ((char *)s);
 }
 
 /*int	main(void)
 {
-	char	tab[17] = "ceci est un test";
-	char	tabtrue[17] = "ceci est un trues";
+	const char	*s1 = "voici la fonction strrchr";
+	char		*res;
 
-	printf ("%s : beforetest\n", tab);
-	printf ("%s : beforetrue\n", tabtrue);
-
-	bzero((tabtrue + 8), 5);
-	ft_bzero((tab + 8), 5);
-	printf ("%s : aftertrue\n", tabtrue);
-	printf ("%s : aftertest\n", tab);
+	printf("string :%s\n", s1);
+	res = ft_strrchr(s1, 'r');
+	printf ("%p : %s", res, res);
 	return (0);
 }*/
