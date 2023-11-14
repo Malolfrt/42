@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:36:15 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 20:01:24 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/14 18:15:50 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char	*p;
-	unsigned char		z;
-	size_t				i;
+	const char	*p;
+	size_t		i;
 
-	p = s;
-	z = c;
+	p = (void *)s;
 	i = 0;
 	while (i < n)
 	{
 		if (p[i] == c)
-			return ((void *)p + i);
+			return ((void *)(p + i));
 		i++;
 	}
 	return (0);
@@ -45,4 +43,11 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		printf("Caractère non trouvé.\n");
 	}
 	return 0;
+}*/
+
+/*int	main(void)
+{
+	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
+
+	printf("%s", (char *)ft_memchr(tab, -1, 7));
 }*/
