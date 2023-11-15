@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:58:52 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/14 20:05:12 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/15 13:16:47 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *nptr)
 
 /*int	main(void)
 {
-	const char	*str = "   +-1243qw25";
+	const char	*str = "   1243qw25";
 	int			res;
 
 	res = ft_atoi(str);

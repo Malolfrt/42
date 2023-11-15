@@ -6,7 +6,7 @@
 #    By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 14:09:58 by mlefort           #+#    #+#              #
-#    Updated: 2023/11/14 19:22:16 by mlefort          ###   ########.fr        #
+#    Updated: 2023/11/15 17:05:50 by mlefort          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,10 @@ SRC_FILES	=	ft_isalpha \
 				ft_memchr \
 				ft_memcmp \
 				ft_strnstr \
-				ft_atoi 
-
+				ft_atoi \
+				ft_calloc \
+				ft_strdup
+				
 OBJ_FILES	= $(addsuffix .o, $(SRC_FILES))
 
 all: ${NAME}

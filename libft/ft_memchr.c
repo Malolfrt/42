@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:36:15 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/14 18:15:50 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/15 17:37:04 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (p[i] == c)
+		if (p[i] == (char)c)
 			return ((void *)(p + i));
 		i++;
 	}
@@ -47,7 +47,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 /*int	main(void)
 {
-	int tab[7] = {-49, 49, 1, -1, 0, -2, 2};
-
-	printf("%s", (char *)ft_memchr(tab, -1, 7));
+	char tab[] = {0, 1, 2, 3, 4, 5};
+	printf("%s", (char *)ft_memchr(tab, 2 + 256, 3));
 }*/

@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/08 12:32:31 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 15:51:50 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/15 13:31:21 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_bzero(void *s, size_t n)
 
 	i = 0;
 	str = s;
-	while (i <= n)
+	while (i < n)
 	{
 		str[i] = 0;
 		i++;

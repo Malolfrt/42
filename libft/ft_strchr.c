@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:42:26 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 18:14:03 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/15 17:39:06 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,37 +14,28 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int		i;
+	int	i;
+	int	len;
 
 	i = 0;
-	while (s[i])
+	len = ft_strlen(s);
+	while (i <= len)
 	{
-		if (s[i] == c)
+		if (s[i] == (char)c)
 		{
-			return ((char *)s);
+			return ((char *)s + i);
 		}
 		i++;
 	}
 	return (NULL);
 }
 
-/*int main()
-{
-	char str[] = "http://www.tutorialspoint.com";
-	char ch = 'w';
-	char *ret;
-
-	ret = ft_strchr(str, ch);
-	printf("String after |%c| is - |%s|\n", ch, ret);
-	return (0);
-}*/
-
 /*int	main(void)
 {
-	char	*s = "test de la fonction";
-	char	res;
+	char	*s = "bonjour";
+	char	*res;
 
-	res = ft_strchr(s, 'l');
-	printf ("str after %c is - %c\n", s, res);
+	res = ft_strchr(s, 'b');
+	printf ("str after |%s| is - |%s|\n", s, res);
 	return (0);
 }*/

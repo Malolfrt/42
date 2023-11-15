@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:00:52 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/15 13:31:08 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/15 16:16:53 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/15 16:55:08 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
-	char	*str;
+	void	*tab;
+	size_t	total;
 
-	i = 0;
-	str = s;
-	while (i < n)
-	{
-		str[i] = (char)c;
-		i++;
-	}
-	s = str;
-	return (s);
+	total = nmemb * size;
+	if (size && (nmemb > SIZE_MAX / size))
+		return (NULL);
+	tab = malloc(total);
+	if (!tab)
+		return (0);
+	ft_bzero(tab, total);
+	return (tab);
 }
 
 /*int	main(void)
 {
-	void	*test;
-	void	*true;
-	char	*restest;
-	char	*restrue;
-	void	*tab[15];
-
-	test = ft_memset(tab, 't', 3);
-	true = memset(tab, 't', 3);
-	restest = test;
-	restrue = true;
-	printf("%s : %s", restest, restrue);
+	printf ("%d", ft_calloc(5, 5));
 }*/

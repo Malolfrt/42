@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:55:47 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 16:51:43 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/15 18:45:39 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,25 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	i = 0;
 	len = 0;
 	while (src[len])
-	{
 		len++;
-		if (size < 1)
-			return (len);
-		while (src[i] && i < size - 1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
+	if (size < 1)
+		return (len);
+	while (src[i] && i < size - 1)
+	{
+		dst[i] = src[i];
+		i++;
 	}
-	dst[i + 1] = '\0';
-	return (len + 1);
+	dst[i] = '\0';
+	return (len);
 }
 
 /*int	main(void)
 {
-	char	dst[50];
-	char	*src = "12345679";
+	char	dst[10] = "AAAAAAAAAA";
+	char	*src = "coucou";
 	int		res;
 
-	res = ft_strlcpy(dst, src, 5);
+	res = ft_strlcpy(dst, src, 0);
 	printf ("%d\n", res);
 	return (0);
 }*/

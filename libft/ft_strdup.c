@@ -1,44 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 15:00:52 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/15 13:31:08 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/15 16:59:32 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/15 17:16:35 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void	ft_strcpy(char *dest, const char *src)
 {
-	size_t	i;
-	char	*str;
+	int	i;
 
 	i = 0;
-	str = s;
-	while (i < n)
+	while (src[i])
 	{
-		str[i] = (char)c;
+		dest[i] = src[i];
 		i++;
 	}
-	s = str;
-	return (s);
+	dest[i] = '\0';
 }
 
-/*int	main(void)
+char	*ft_strdup(const char *s)
 {
-	void	*test;
-	void	*true;
-	char	*restest;
-	char	*restrue;
-	void	*tab[15];
+	int		len;
+	char	*str;
 
-	test = ft_memset(tab, 't', 3);
-	true = memset(tab, 't', 3);
-	restest = test;
-	restrue = true;
-	printf("%s : %s", restest, restrue);
-}*/
+	len = ft_strlen(s);
+	str = malloc(sizeof(char) * (len + 1));
+	ft_strcpy(str, s);
+	return (str);
+}
