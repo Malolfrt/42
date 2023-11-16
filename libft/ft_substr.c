@@ -1,42 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 18:14:29 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/16 15:45:30 by malo             ###   ########.fr       */
+/*   Created: 2023/11/16 14:36:11 by malo              #+#    #+#             */
+/*   Updated: 2023/11/16 16:41:55 by malo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
+	char	*str;
+	size_t	size;
 
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
-	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-		if (c == '\0')
-			return (NULL);
-		i--;
-	}
-	return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	size = ft_strlen(s + start);
+	if (size < len)
+		len = size;
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, s + start, len + 1);
+	return (str);
 }
 
 /*int	main(void)
 {
-	const char	*s1 = "bonjour";
-	char		*res;
+	char	*str;
 
-	printf("string :%s\n", s1);
-	res = ft_strrchr(s1, 'b');
-	printf ("%p : %s", res, res);
+	str = ft_substr("42", 0, 0);
+	printf("%s\n", str);
 	return (0);
 }*/

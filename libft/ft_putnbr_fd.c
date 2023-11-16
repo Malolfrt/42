@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/13 18:14:29 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/16 15:45:30 by malo             ###   ########.fr       */
+/*   Created: 2023/11/16 18:04:35 by malo              #+#    #+#             */
+/*   Updated: 2023/11/16 18:19:33 by malo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	while (i >= 0)
+	if (n == -2147483648)
 	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-		if (c == '\0')
-			return (NULL);
-		i--;
+		write(fd, "-2147483648", 11);
+		return ;
 	}
-	return (NULL);
+	if (n < 0)
+	{
+		n = n * -1;
+		write(fd, "-", 1);
+	}
+	if (n >= 10)
+	{
+		ft_putnbr_fd((n / 10), fd);
+		ft_putnbr_fd((n % 10), fd);
+	}
+	else
+	{
+		n = n + '0';
+		ft_putchar_fd(n, fd);
+	}
 }
-
-/*int	main(void)
-{
-	const char	*s1 = "bonjour";
-	char		*res;
-
-	printf("string :%s\n", s1);
-	res = ft_strrchr(s1, 'b');
-	printf ("%p : %s", res, res);
-	return (0);
-}*/
