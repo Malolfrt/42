@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: malo <malo@student.42.fr>                  +#+  +:+       +#+         #
+#    By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 14:09:58 by mlefort           #+#    #+#              #
-#    Updated: 2023/11/16 18:17:45 by malo             ###   ########.fr        #
+#    Updated: 2023/11/17 14:57:37 by mlefort          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,10 @@ SRC_FILES	=	ft_isalpha \
 				ft_putchar_fd \
 				ft_putstr_fd \
 				ft_putendl_fd \
-				ft_putnbr_fd
+				ft_putnbr_fd \
+				ft_strmapi \
+				ft_striteri \
+				ft_strtrim
 				
 				
 OBJ_FILES	= $(addsuffix .o, $(SRC_FILES))

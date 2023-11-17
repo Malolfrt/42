@@ -1,25 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 17:52:20 by malo              #+#    #+#             */
-/*   Updated: 2023/11/17 14:15:59 by mlefort          ###   ########.fr       */
+/*   Created: 2023/11/17 13:37:08 by mlefort           #+#    #+#             */
+/*   Updated: 2023/11/17 14:23:22 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr_fd(char *s, int fd)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
+	char			*str;
+	size_t			len;
+	unsigned int	i;
 
+	len = ft_strlen(s);
 	i = 0;
+	if (!s)
+		return (NULL);
+	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
 	while (s[i])
 	{
-		write(fd, &s[i], 1);
+		str[i] = f(i, s[i]);
 		i++;
 	}
+	str[i] = '\0';
+	return (str);
 }
+
+/*char	addone(unsigned int i, char c) {return (i + c);}
+
+int	main(void)
+{
+	char	*res;
+
+	res = ft_strmapi("1234", addone);
+	printf("%s\n", res);
+	return (0);
+}*/
