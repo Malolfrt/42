@@ -6,74 +6,108 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 17:08:37 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/17 19:27:13 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/23 18:24:42 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	*count_tab(char const *s, int c)
+static int	count_tab(char const *s, int c)
 {
-	int		i;
-	int		i_temp;
-	int		*count;
+	int	i;
+	int	count;
 
 	i = 0;
-	while (i < ft_strlen(s))
+	count = 0;
+	while (s[i])
 	{
-		while (i < ft_strlen(s))
-		{
-			if (ft_strchr(c, s[i]) == NULL)
-				break ;
+		while (s[i] == c)
 			i++;
-		}
-		i_temp = i;
-		while (i < ft_strlen(s))
-		{
-			if (ft_strchr(c, s[i]) != NULL)
-				break ;
+		if (s[i] != '\0')
+			count++;
+		while (s[i] && s[i] != c)
 			i++;
-		}
-		if (i > i_temp)
-			*count = *count + 1;
 	}
-	return (*count);
+	return (count);
 }
 
-void	*cpy_tab(char const *s, int c)
+static char	*put_in_tab(char const *s, int c)
+{
+	char	*str;
+	int		len;
+	int		i;
+
+	len = 0;
+	while (s[len] != c && s[len])
+		len++;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = s[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
+}
+
+static char	*cpy_in_tab(int i, char const *s, int c, char **tab)
+{
+	tab[i] = put_in_tab(s, c);
+	if (!tab[i])
+	{
+		while (i > 0)
+		{
+			i--;
+			free(tab[i]);
+		}
+		free(tab);
+		return (NULL);
+	}
+	return (tab[i]);
+}		
+
+char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		j;
-	char	buff[50000];
-	int		tab_index;
-	char	*tab;
+	int		count;
+	char	**tab;
 
+	if (!s)
+		return (NULL);
+	count = count_tab(s, c);
+	tab = (char **)malloc(sizeof(char *) * (count + 1));
+	if (!tab)
+		return (NULL);
 	i = 0;
-	while (i < ft_strlen(s))
+	while (i < count)
 	{
-		while (i < ft_strlen(s))
+		while (*s == c)
+			s++;
+		if (*s && *s != c)
 		{
-			if (ft_strchr(c, s[i]) == NULL)
-				break ;
-			i++;
+			tab[i] = cpy_in_tab(i, s, c, tab);
 		}
-		j = 0;
-		while (i < ft_strlen(s))
-		{
-			if (ft_strchr(c, s[i]) != NULL)
-				break ;
-			buff[j] = s[i];
-			j++;
-			i++;
-		}
-		if (j > 0)
-		{
-		buff[j] = '\0';
-		tab[tab_index] = malloc(sizeof(char *) * (ft_strlen(buff)));
-		tab_index++;
-		}
+		while (*s != '\0' && *s != c)
+			s++;
+		i++;
 	}
+	tab[i] = 0;
+	return (tab);
 }
 
-char	**ft_split(char const *s, char c);
-//**tab = malloc(char *) * (*count)
+/*int	main(void)
+{
+	char	**res;
+
+	res = ft_split("ceci est le test de split  ", ' ');
+	printf ("%s\n", res[0]);
+	printf ("%s\n", res[1]);
+	printf ("%s\n", res[2]);
+	printf ("%s\n", res[3]);
+	printf ("%s\n", res[4]);
+	printf ("%s\n", res[5]);
+	printf ("%s\n", res[6]);
+}*/
