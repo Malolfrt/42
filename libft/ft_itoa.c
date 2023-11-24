@@ -3,66 +3,60 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:31:22 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/23 20:34:21 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/24 23:10:24 by malo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*check_min(int n)
+static int	count(int n)
 {
-	char	*str;
+	int	i;
 
-	if (n == -2147483648)
+	i = 0;
+	if (n < 0)
 	{
-		str = (char *)malloc(sizeof(char) * 12);
-		if (!str)
-			return (0);
-		str = "-2147483648";
-		str[11] = '\0';
-		return (str);
-	}
-	return (NULL);
-}
-
-char	*print_res(int n)
-{
-	char	*str;
-	char    *temp;
-
-	if (n > 9)
-	{
-		temp = print_res((n / 10));
-        str = ft_strjoin(temp, print_res(n % 10));
-		print_res((n % 10));
-	}
-    else if(n >= 0 && n <= 9)
-	{
-		str[i] = (n + '0');
+		n = n * -1;
 		i++;
 	}
-	return (str);
+	while (n != 0)
+	{
+		n = n / 10;
+		i++;
+	}
+	if (i == 0)
+		i++;
+	return (i);
 }
 
 char	*ft_itoa(int n)
 {
-	char	*str;
+	int			len;
+	char		*str;
+	long int	nbr;
+	int			i;
 
-	if (check_min(n) != NULL)
+	nbr = n;
+	len = count(nbr);
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	i = 0;
+	if (nbr < 0)
 	{
-		return (check_min(n));
+		nbr = nbr * -1;
+		str[0] = '-';
+		i++;
 	}
-	if (n < 0)
+	while (len > i)
 	{
-		str = ft_strjoin("-", print_res(-n));
+		len--;
+		str[len] = (nbr % 10) + '0';
+		nbr = nbr / 10;
 	}
-    else
-    {
-	str = print_res(n);
-    }
 	return (str);
 }
 
@@ -71,7 +65,7 @@ char	*ft_itoa(int n)
 	int		i;
 	char	*res;
 
-	i = 123;
+	i = 2147483647;
 	res = ft_itoa(i);
 	printf ("%s\n", res);
 	return (0);

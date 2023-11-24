@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 17:08:37 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/23 18:24:42 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/24 15:22:26 by malo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static char	*cpy_in_tab(int i, char const *s, int c, char **tab)
 		return (NULL);
 	}
 	return (tab[i]);
-}		
+}
 
 char	**ft_split(char const *s, char c)
 {
@@ -84,12 +84,10 @@ char	**ft_split(char const *s, char c)
 	i = 0;
 	while (i < count)
 	{
-		while (*s == c)
+		while (*s == c && *s)
 			s++;
 		if (*s && *s != c)
-		{
 			tab[i] = cpy_in_tab(i, s, c, tab);
-		}
 		while (*s != '\0' && *s != c)
 			s++;
 		i++;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+         #
+#    By: malo <malo@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 14:09:58 by mlefort           #+#    #+#              #
-#    Updated: 2023/11/23 13:52:08 by mlefort          ###   ########.fr        #
+#    Updated: 2023/11/24 18:07:47 by malo             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,9 +45,9 @@ SRC_FILES	=	ft_isalpha \
 				ft_strmapi \
 				ft_striteri \
 				ft_strtrim \
-				ft_split
-				
-				
+				ft_split \
+				ft_itoa
+					
 OBJ_FILES	= $(addsuffix .o, $(SRC_FILES))
 
 all: ${NAME}
