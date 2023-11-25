@@ -6,7 +6,7 @@
 /*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:36:11 by malo              #+#    #+#             */
-/*   Updated: 2023/11/16 16:41:55 by malo             ###   ########.fr       */
+/*   Updated: 2023/11/25 22:58:15 by malo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 	size_t	size;
 
+	if (s == NULL)
+		return (NULL);
 	if (start >= ft_strlen(s))
 		return (ft_strdup(""));
 	size = ft_strlen(s + start);

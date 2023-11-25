@@ -6,7 +6,7 @@
 /*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:31:22 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/24 23:10:24 by malo             ###   ########.fr       */
+/*   Updated: 2023/11/25 15:21:01 by malo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char	*ft_itoa(int n)
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
+	str[len] = '\0';
 	i = 0;
 	if (nbr < 0)
 	{
