@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:42:25 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/17 17:07:55 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/25 23:20:59 by malo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	fin;
 	size_t	len;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	fin = ft_strlen(s1);
 	start = 0;
-	if (!s1 || !set)
-		return (NULL);
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	while (fin > start && ft_strchr(set, s1[fin - 1]))
@@ -39,7 +39,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
 
-	res = ft_strtrim("tripouille   xxx", " x");
+	res = ft_strtrim("    xxx   tripouille  xxx", " x");
 	printf ("%s\n", res);
 	return (0);
 }*/

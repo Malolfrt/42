@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:08:45 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 19:25:31 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/25 22:46:52 by malo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	if (n == 0)
 		return (0);
-	while (i < n)
+	while (i < n && (s1[i] || s2[i]))
 	{
 		if (s1[i] != s2[i])
 		{
-			return (s1[i] - s2[i]);
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		}
 		i++;
 	}
@@ -32,11 +32,14 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 /*int	main(void)
 {
-	const char	*str1 = "abcdzfg";
-	const char	*str2 = "abcdafg";
+	const char	*str1 = "\x12\xff\x65\x12\xbd\xde\xad";
+	const char	*str2 = "\x12\x02";
 	int			res;
+	int			restrue;
 
-	res = ft_strncmp(str1, str2, 4);
+	res = strncmp(str1, str2, 1);
+	res = ft_strncmp(str1, str2, 1);
 	printf ("%d\n", res);
+	printf ("%d\n", restrue);
 	return (0);
 }*/

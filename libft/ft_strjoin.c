@@ -6,7 +6,7 @@
 /*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:43:26 by malo              #+#    #+#             */
-/*   Updated: 2023/11/16 17:11:03 by malo             ###   ########.fr       */
+/*   Updated: 2023/11/25 23:00:52 by malo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	size;
 	char	*str;
 
+	if (s1 == NULL || s2 == NULL)
+		return (NULL);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
 	size = len1 + len2;

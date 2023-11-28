@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:59:32 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/15 17:16:35 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/25 22:09:32 by malo             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strcpy(char *dest, const char *src)
+static void	ft_strcpy(char *dest, const char *src)
 {
 	int	i;
 
@@ -32,6 +32,8 @@ char	*ft_strdup(const char *s)
 
 	len = ft_strlen(s);
 	str = malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
 	ft_strcpy(str, s);
 	return (str);
 }
