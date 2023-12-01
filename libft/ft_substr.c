@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 14:36:11 by malo              #+#    #+#             */
-/*   Updated: 2023/11/25 22:58:15 by malo             ###   ########.fr       */
+/*   Updated: 2023/11/30 12:31:21 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(str, s + start, len + 1);
 	return (str);
 }
-
-/*int	main(void)
-{
-	char	*str;
-
-	str = ft_substr("42", 0, 0);
-	printf("%s\n", str);
-	return (0);
-}*/

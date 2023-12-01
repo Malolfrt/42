@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:31:22 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/28 14:17:41 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 12:34:20 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,3 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
-
-/*int	main(void)
-{
-	int		i;
-	char	*res;
-
-	i = 2147483647;
-	res = ft_itoa(i);
-	printf ("%s\n", res);
-	return (0);
-}*/

@@ -6,7 +6,7 @@
 #    By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 14:09:58 by mlefort           #+#    #+#              #
-#    Updated: 2023/11/28 18:29:06 by mlefort          ###   ########.fr        #
+#    Updated: 2023/11/30 15:00:46 by mlefort          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,16 +66,11 @@ all: ${NAME}
 ${NAME}: ${OBJ_FILES}
 		ar rcs ${NAME} ${OBJ_FILES}
 
-bonus : ${BONUS_OBJ_FILES}
-		ar rcs ${NAME} ${BONUS_OBJ_FILES}
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC_FILES) $(BONUS_FILES)
-	gcc -nostartfiles -shared -o libft.so $(OBJ_FILES) $(BONUS_OBJ_FILES)
-
+bonus : ${BONUS_OBJ_FILES} ${OBJ_FILES}
+		ar rcs ${NAME} ${BONUS_OBJ_FILES} ${OBJ_FILES}
 
 clean:
-	rm -f *.o
+	rm -f ${OBJ_FILES} ${BONUS_OBJ_FILES}
 
 fclean: clean
 		rm -f ${NAME}

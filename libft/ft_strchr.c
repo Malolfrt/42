@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:42:26 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/17 16:27:13 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/12/01 15:52:32 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strchr(const char *s, int c)
 	len = ft_strlen(s);
 	while (i <= len)
 	{
-		if (s[i] == (char)c)
+		if (s[i] == (unsigned char)c)
 		{
 			return ((char *)s + i);
 		}
@@ -29,13 +29,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/*int	main(void)
-{
-	char	*s = "bonjour";
-	char	*res;
-
-	res = ft_strchr(s, 'b');
-	printf ("str after |%s| is - |%s|\n", s, res);
-	return (0);
-}*/

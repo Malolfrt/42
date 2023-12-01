@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:32:01 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/07 13:16:37 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 12:34:44 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,3 @@ int	ft_isalpha(int c)
 	else
 		return (0);
 }
-/*
-#include <stdio.h>
-
-int main(void)
-{
-    int i;
-
-    i = ft_isalpha('a');
-    printf("%d\n", i);
-    return (0);
-}*/

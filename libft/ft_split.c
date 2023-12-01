@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 17:08:37 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/24 15:22:26 by malo             ###   ########.fr       */
+/*   Updated: 2023/11/30 12:33:19 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,17 +95,3 @@ char	**ft_split(char const *s, char c)
 	tab[i] = 0;
 	return (tab);
 }
-
-/*int	main(void)
-{
-	char	**res;
-
-	res = ft_split("ceci est le test de split  ", ' ');
-	printf ("%s\n", res[0]);
-	printf ("%s\n", res[1]);
-	printf ("%s\n", res[2]);
-	printf ("%s\n", res[3]);
-	printf ("%s\n", res[4]);
-	printf ("%s\n", res[5]);
-	printf ("%s\n", res[6]);
-}*/

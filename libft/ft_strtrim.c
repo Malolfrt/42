@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 14:42:25 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/25 23:20:59 by malo             ###   ########.fr       */
+/*   Updated: 2023/11/30 13:41:31 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,23 +23,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	fin = ft_strlen(s1);
 	start = 0;
-	while (s1[start] && ft_strchr(set, s1[start]))
+	while (s1[start] != '\0' && ft_strchr(set, s1[start]))
 		start++;
-	while (fin > start && ft_strchr(set, s1[fin - 1]))
-		fin--;
+	while (ft_strchr(set, s1[fin - 1]) && (s1[fin - 1] != '\0')
+		&& (start < fin))
+			fin--;
 	len = (fin - start);
-	str = malloc(sizeof(*s1) * (len + 1));
+	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	ft_strlcpy(str, (s1 + start), len + 1);
+	else
+		ft_strlcpy(str, &s1[start], len + 1);
 	return (str);
 }
-
-/*int	main(void)
-{
-	char	*res;
-
-	res = ft_strtrim("    xxx   tripouille  xxx", " x");
-	printf ("%s\n", res);
-	return (0);
-}*/

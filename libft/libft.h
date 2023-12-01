@@ -6,16 +6,13 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 16:37:53 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/28 17:09:31 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 12:59:20 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdio.h>
-# include <string.h>
-# include <ctype.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdint.h>

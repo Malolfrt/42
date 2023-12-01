@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:16:53 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/15 16:55:08 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 12:34:56 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,3 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	ft_bzero(tab, total);
 	return (tab);
 }
-
-/*int	main(void)
-{
-	printf ("%d", ft_calloc(5, 5));
-}*/

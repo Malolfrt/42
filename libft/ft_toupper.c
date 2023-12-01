@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:12:04 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 17:27:27 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 14:06:35 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,6 @@
 int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
-	{
 		c = c - 32;
-	}
 	return (c);
 }
-
-/*int	main(void)
-{
-	char	c;
-	c = ft_toupper('a');
-	printf("%c", c);
-	return (0);
-}*/

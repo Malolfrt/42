@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 20:43:31 by malo              #+#    #+#             */
-/*   Updated: 2023/11/28 14:32:46 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 12:33:56 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,3 @@ t_list	*ft_lstnew(void *content)
 	new->next = NULL;
 	return (new);
 }
-
-/*int	main(void)
-{
-	char	*test = "test de la sturcture";
-	t_list	*nw;
-
-	nw = ft_lstnew(test);
-	printf("%s\n", (char *)nw->content);
-	printf("%s\n", (char *)nw->next);
-	return (0);
-}*/

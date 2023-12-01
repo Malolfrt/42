@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:50:30 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/07 13:56:53 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 12:34:51 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,3 @@ int	ft_isalnum(int c)
 	else
 		return (0);
 }
-
-/*#include "libft.h"
-
-int	main(void)
-{
-    int i;
-
-    i = ft_isalnum('\n');
-    printf("%d\n", i);
-    return (0);
-}*/

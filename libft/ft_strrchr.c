@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 18:14:29 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/16 15:45:30 by malo             ###   ########.fr       */
+/*   Updated: 2023/11/30 12:31:43 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,3 @@ char	*ft_strrchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/*int	main(void)
-{
-	const char	*s1 = "bonjour";
-	char		*res;
-
-	printf("string :%s\n", s1);
-	res = ft_strrchr(s1, 'b');
-	printf ("%p : %s", res, res);
-	return (0);
-}*/

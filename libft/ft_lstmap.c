@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 18:18:02 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/28 18:37:29 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 12:27:58 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 			return (NULL);
 		}
 		ft_lstadd_back(&new_list, temp);
-		lst = lst->next;		
+		lst = lst->next;
 	}
 	return (new_list);
 }

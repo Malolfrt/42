@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 13:37:08 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/25 23:21:35 by malo             ###   ########.fr       */
+/*   Updated: 2023/11/30 12:32:23 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,3 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-
-/*char	addone(unsigned int i, char c) {return (i + c);}
-
-int	main(void)
-{
-	char	*res;
-
-	res = ft_strmapi("1234", addone);
-	printf("%s\n", res);
-	return (0);
-}*/

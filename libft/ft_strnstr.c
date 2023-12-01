@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:21:03 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/15 19:00:35 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 12:31:57 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,17 +36,3 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (0);
 }
-
-/*int	main(void)
-{
-	const char	*str1 = "aaabcabcd";
-	const char	*str2 = "cd";
-	char	*res;
-	char  *restrue;
-
-	res = ft_strnstr(str1, str2, 8);
-	restrue = strstr(str1, str2);
-	printf ("%s\n", res);
-	printf ("%s\n", restrue);
-	return (0);
-}*/

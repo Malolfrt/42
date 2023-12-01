@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:21:25 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/13 17:29:27 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 12:31:06 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,3 @@ int	ft_tolower(int c)
 		c = c + 32;
 	return (c);
 }
-
-/*int	main(void)
-{
-	char	c;
-	c = ft_tolower('Q');
-	printf("%c", c);
-	return (0);
-}*/

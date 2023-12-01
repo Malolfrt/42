@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 16:43:26 by malo              #+#    #+#             */
-/*   Updated: 2023/11/25 23:00:52 by malo             ###   ########.fr       */
+/*   Updated: 2023/11/30 12:33:01 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ft_strlcat(str, s2, (size + 1));
 	return (str);
 }
-
-/*int	main(void)
-{
-	char	*str;
-
-	str = ft_strjoin("lefort", "malo ");
-	printf ("%s\n", str);
-	return (0);
-}*/

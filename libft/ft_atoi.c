@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 20:58:52 by mlefort           #+#    #+#             */
-/*   Updated: 2023/11/15 13:16:47 by mlefort          ###   ########.fr       */
+/*   Updated: 2023/11/30 14:05:15 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,3 @@ int	ft_atoi(const char *nptr)
 	}
 	return (result * neg);
 }
-
-/*int	main(void)
-{
-	const char	*str = "   1243qw25";
-	int			res;
-
-	res = ft_atoi(str);
-	printf ("%d\n", res);
-	return (0);
-}*/
