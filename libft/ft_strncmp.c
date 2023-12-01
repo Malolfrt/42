@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 19:08:45 by mlefort           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/11/30 12:32:18 by mlefort          ###   ########.fr       */
+=======
+/*   Updated: 2023/11/25 22:46:52 by malo             ###   ########.fr       */
+>>>>>>> fbe285ebca3119bb4f8769b5e9aa7408e734fc1a
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,3 +33,20 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	}
 	return (0);
 }
+<<<<<<< HEAD
+=======
+
+/*int	main(void)
+{
+	const char	*str1 = "\x12\xff\x65\x12\xbd\xde\xad";
+	const char	*str2 = "\x12\x02";
+	int			res;
+	int			restrue;
+
+	res = strncmp(str1, str2, 1);
+	res = ft_strncmp(str1, str2, 1);
+	printf ("%d\n", res);
+	printf ("%d\n", restrue);
+	return (0);
+}*/
+>>>>>>> fbe285ebca3119bb4f8769b5e9aa7408e734fc1a

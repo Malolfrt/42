@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
+/*   By: malo <malo@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 18:31:22 by mlefort           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/11/30 12:34:20 by mlefort          ###   ########.fr       */
+=======
+/*   Updated: 2023/11/25 15:21:01 by malo             ###   ########.fr       */
+>>>>>>> fbe285ebca3119bb4f8769b5e9aa7408e734fc1a
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +64,17 @@ char	*ft_itoa(int n)
 	}
 	return (str);
 }
+<<<<<<< HEAD
+=======
+
+/*int	main(void)
+{
+	int		i;
+	char	*res;
+
+	i = 2147483647;
+	res = ft_itoa(i);
+	printf ("%s\n", res);
+	return (0);
+}*/
+>>>>>>> fbe285ebca3119bb4f8769b5e9aa7408e734fc1a

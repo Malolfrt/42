@@ -3,10 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+         #
+#    By: malo <malo@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/14 14:09:58 by mlefort           #+#    #+#              #
+<<<<<<< HEAD
 #    Updated: 2023/11/30 15:00:46 by mlefort          ###   ########.fr        #
+=======
+#    Updated: 2023/11/25 21:05:20 by malo             ###   ########.fr        #
+>>>>>>> fbe285ebca3119bb4f8769b5e9aa7408e734fc1a
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +52,7 @@ SRC_FILES	=	ft_isalpha.c \
 				ft_split.c \
 				ft_itoa.c
 
+<<<<<<< HEAD
 BONUS_FILES	=	ft_lstnew.c \
 				ft_lstadd_front.c \
 				ft_lstsize.c \
@@ -60,14 +65,30 @@ BONUS_FILES	=	ft_lstnew.c \
 					
 OBJ_FILES	= $(SRC_FILES:.c=.o)
 BONUS_OBJ_FILES	= $(BONUS_FILES:.c=.o)
+=======
+BONUS_FILES	=	ft_lstnew.c
+					
+OBJ_FILES	= $(SRC_FILES:.c=.o)
+BONUS_OBJ_FILES	= $(SRC_FILES:.c=.o)
+>>>>>>> fbe285ebca3119bb4f8769b5e9aa7408e734fc1a
 
 all: ${NAME}
 
 ${NAME}: ${OBJ_FILES}
 		ar rcs ${NAME} ${OBJ_FILES}
 
+<<<<<<< HEAD
 bonus : ${BONUS_OBJ_FILES} ${OBJ_FILES}
 		ar rcs ${NAME} ${BONUS_OBJ_FILES} ${OBJ_FILES}
+=======
+bonus : ${BONUS_OBJ_FILES}
+		ar rcs ${NAME} ${BONUS_OBJ_FILES}
+
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC_FILES)
+	gcc -nostartfiles -shared -o libft.so $(OBJ_FILES)
+
+>>>>>>> fbe285ebca3119bb4f8769b5e9aa7408e734fc1a
 
 clean:
 	rm -f ${OBJ_FILES} ${BONUS_OBJ_FILES}
