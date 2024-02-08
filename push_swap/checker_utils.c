@@ -6,96 +6,46 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 18:39:14 by mlefort           #+#    #+#             */
-/*   Updated: 2024/02/02 20:22:54 by mlefort          ###   ########.fr       */
+/*   Updated: 2024/02/08 14:01:14 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-static int	ft_swap(t_stack **a, t_stack **b, char *line)
+int	ft_strcmp(char *s1, char *s2)
 {
-	if (ft_strcmp_v2(line, "sa\n") == 0)
+	while (*s1 == *s2 && *s1)
 	{
+		++s1;
+		++s2;
+	}
+	return (*s1 - *s2);
+}
+
+void	match_op(t_stack **a, t_stack **b, char *line)
+{
+	if (ft_strcmp("sa\n", line) == 0)
 		sa(a, true);
-		return (1);
-	}
-	else if (ft_strcmp_v2(line, "sb\n") == 0)
-	{
+	else if (ft_strcmp("sb\n", line) == 0)
 		sb(b, true);
-		return (1);
-	}
-	else if (ft_strcmp_v2(line, "ss\n") == 0)
-	{
+	else if (ft_strcmp("ss\n", line) == 0)
 		ss(a, b, true);
-		return (1);
-	}
-	return (0);
-}
-
-static int	ft_push(t_stack **a, t_stack **b, char *line)
-{
-	if (ft_strcmp_v2(line, "pa\n") == 0)
-	{
-		pa(a, b, true);
-		return (1);
-	}
-	else if (ft_strcmp_v2(line, "pb\n") == 0)
-	{
-		pb(a, b, true);
-		return (1);
-	}
-	return (0);
-}
-
-static int	ft_rotate(t_stack **a, t_stack **b, char *line)
-{
-	if (ft_strcmp_v2(line, "ra\n") == 0)
-	{
+	else if (ft_strcmp("ra\n", line) == 0)
 		ra(a, true);
-		return (1);
-	}
-	else if (ft_strcmp_v2(line, "rb\n") == 0)
-	{
-		rb(a, true);
-		return (1);
-	}
-	else if (ft_strcmp_v2(line, "rr\n") == 0)
-	{
+	else if (ft_strcmp("rb\n", line) == 0)
+		rb(b, true);
+	else if (ft_strcmp("rr\n", line) == 0)
 		rr(a, b, true);
-		return (1);
-	}
-	return (0);
-}
-
-static int	ft_reverse_rotate(t_stack **a, t_stack **b, char *line)
-{
-	if (ft_strcmp_v2(line, "rra\n") == 0)
-	{
+	else if (ft_strcmp("rra\n", line) == 0)
 		rra(a, true);
-		return (1);
-	}
-	else if (ft_strcmp_v2(line, "rrb\n") == 0)
-	{
-		rrb(a, true);
-		return (1);
-	}
-	else if (ft_strcmp_v2(line, "rrr\n") == 0)
-	{
+	else if (ft_strcmp("rrb\n", line) == 0)
+		rrb(b, true);
+	else if (ft_strcmp("rrr\n", line) == 0)
 		rrr(a, b, true);
-		return (1);
-	}
-	return (0);
-}
-
-int	match_op(t_stack **a, t_stack **b, char *line)
-{
-	if (ft_swap(a, b, line) == 1)
-		return (1);
-	if (ft_push(a, b, line) == 1)
-		return (1);
-	if (ft_rotate(a, b, line) == 1)
-		return (1);
-	if (ft_reverse_rotate(a, b, line) == 1)
-		return (1);
-	return (0);
+	else if (ft_strcmp("pa\n", line) == 0)
+		pa(a, b, true);
+	else if (ft_strcmp("pb\n", line) == 0)
+		pb(a, b, true);
+	else
+		return ;
 }

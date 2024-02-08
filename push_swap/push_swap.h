@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 21:15:03 by mlefort           #+#    #+#             */
-/*   Updated: 2024/02/07 20:31:02 by mlefort          ###   ########.fr       */
+/*   Updated: 2024/02/08 14:43:19 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int		check_input(char **av, int i);
 int		is_number(char c);
 int		is_sign(char c);
 int		ft_strcmp_v2(char *s1, char *s2);
-long	ft_atol(char *str);
+long	ft_atol_v2(char *str);
 
 /*	stack_init.c	*/
 t_stack	*stack_init(int ac, char **av);
@@ -63,6 +63,7 @@ void	set_position(t_stack *stack);
 void	ft_error(t_stack **a, t_stack **b);
 void	free_stack(t_stack **stack);
 void	ft_putstr(char *str);
+void	free_tab(char **tab);
 
 /*	stack_utils.c	*/
 t_stack	*ft_stack_new(int nb);
@@ -95,9 +96,5 @@ void	set_stack(t_stack *a, t_stack *b);
 
 /*	MOVE : move.c	*/
 void	move_stack(t_stack **a, t_stack **b);
-
-/*					*/
-void	free_tab(char **tab);
-int		ft_tab_size(char **tab);
 
 #endif

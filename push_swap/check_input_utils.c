@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 22:49:55 by mlefort           #+#    #+#             */
-/*   Updated: 2024/02/07 20:24:20 by mlefort          ###   ########.fr       */
+/*   Updated: 2024/02/08 15:00:14 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_strcmp_v2(char *s1, char *s2)
 	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
 }
 
-long	ft_atol(char *str)
+long	ft_atol_v2(char *str)
 {
 	long	res;
 	long	neg;

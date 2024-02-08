@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 22:44:22 by mlefort           #+#    #+#             */
-/*   Updated: 2024/02/07 20:29:22 by mlefort          ###   ########.fr       */
+/*   Updated: 2024/02/08 14:25:29 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	check_duplicate(char **av)
 	return (0);
 }
 
-static int	check_long(long nb)
+static int	check_long(long long nb)
 {
 	if (nb > INT_MAX || nb < INT_MIN)
 		return (1);
@@ -78,7 +78,7 @@ int	check_input(char **av, int i)
 	{
 		if (!input_is_number(av[i]))
 			return (0);
-		if (check_long(ft_atol(av[i])))
+		if (check_long(ft_atol_v2(av[i])))
 			return (0);
 		nb_zero += check_for_zero(av[i]);
 		i++;

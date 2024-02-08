@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 18:13:04 by mlefort           #+#    #+#             */
-/*   Updated: 2024/02/02 20:32:43 by mlefort          ###   ########.fr       */
+/*   Updated: 2024/02/08 14:26:56 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 # include <fcntl.h>
 # include "push_swap.h"
 
-int		match_op(t_stack **a, t_stack **b, char *line);
+void	match_op(t_stack **a, t_stack **b, char *line);
 int		main(int ac, char **av);
+int		ft_strcmp(char *s1, char *s2);
 
 /*	GET_NEXT_LINE	*/
 size_t	ft_strlen(char *s);

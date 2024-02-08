@@ -6,33 +6,11 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/02 18:12:27 by mlefort           #+#    #+#             */
-/*   Updated: 2024/02/07 21:24:03 by mlefort          ###   ########.fr       */
+/*   Updated: 2024/02/08 14:03:14 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
-
-// static void	ft_process_op(t_stack **a, t_stack **b)
-// {
-// 	char	*line;
-
-// 	line = get_next_line(0);
-// 	if (!line)
-// 		return ;
-// 	while (line)
-// 	{
-// 		if (match_op(a, b, line) == 0)
-// 		{
-// 			write(2, "Error\n", 6);
-// 			free(line);
-// 			free_stack(a);
-// 			free_stack(b);
-// 			exit(1);
-// 		}
-// 		free(line);
-// 		line = get_next_line(0);
-// 	}
-// }
 
 static int	is_sorted_v2(t_stack *stack)
 {

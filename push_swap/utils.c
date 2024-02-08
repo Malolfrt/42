@@ -6,7 +6,7 @@
 /*   By: mlefort <mlefort@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 14:17:31 by mlefort           #+#    #+#             */
-/*   Updated: 2024/02/07 20:32:51 by mlefort          ###   ########.fr       */
+/*   Updated: 2024/02/08 14:23:42 by mlefort          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,18 +47,6 @@ void	ft_putstr(char *str)
 		write(1, &str[i], 1);
 		i++;
 	}
-}
-
-int	ft_tab_size(char **tab)
-{
-	int	count;
-
-	count = 0;
-	while (tab[count])
-	{
-		count++;
-	}
-	return (count);
 }
 
 void	free_tab(char **tab)
